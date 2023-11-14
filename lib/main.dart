@@ -15,7 +15,7 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   int left = 2;
-  int right = 2;
+  int right = 3;
   int counter = 0;
 
   void rand() {
@@ -39,9 +39,11 @@ class _DicePageState extends State<DicePage> {
       children: [
         Container(
           width: double.infinity,
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             image: DecorationImage(
-                image: AssetImage('images/dicePFP.gif'), fit: BoxFit.cover),
+                image: AssetImage(
+                    left == right ? 'images/gojo.gif' : 'images/dicePFP.gif'),
+                fit: BoxFit.cover),
           ),
         ),
         DefaultTextStyle(
@@ -66,7 +68,7 @@ class _DicePageState extends State<DicePage> {
           width: 380,
           height: 320,
           decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 255, 179, 193),
+              color: Color.fromARGB(150, 255, 179, 193),
               borderRadius: BorderRadius.all(Radius.circular(20))),
         )),
         Column(
